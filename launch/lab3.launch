@@ -1,0 +1,15 @@
+<launch>
+ 
+  <arg name="use_sim_time" default="false"/>
+  <arg name="use_xacro" default="true"/>
+  <arg name="use_joint_state_publisher_gui" default="true"/>
+ 
+  <include file="$(find navvis_description)/launch/display.launch">
+    <arg name="use_xacro" value="$(arg use_xacro)"/>
+    <arg name="use_joint_state_publisher_gui" value="$(arg use_joint_state_publisher_gui)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+  </include>
+
+  <arg name="old_config" default="false"/>
+  <param unless="$(arg old_config)" name="robot_description" command="$(find xacro)/xacro $(find lab3_package)/urdf/robot.xacro" />
+</launch>
