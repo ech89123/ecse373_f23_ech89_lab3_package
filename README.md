@@ -18,6 +18,6 @@ This package is ran using `roslaunch <lab3_package_name> lab3.launch`.
 &emsp;`old_config` default set to `false`
 <br>
 
-If `use_sim_time` is set to `true`, then you will also need to run:
+If `use_sim_time` is set to `true`, then you will need to run:
 <br>
 `rosbag play --clock <full_path_to_bag_file> /tf_trajectory:=/tf`
